@@ -7,7 +7,7 @@ export const registerTrainerRoutes = (
 ) => {
   server.route({
     method: "GET",
-    url: "/trainers",
+    url: "https://backendpokemon-production.up.railway.app/trainers",
     handler: async (_request, reply) => {
       reply.header("Access-Control-Allow-Origin", "*");
       reply.header("Access-Control-Allow-Headers", "*");
@@ -21,7 +21,7 @@ export const registerTrainerRoutes = (
     Body: { name: string; gender: string };
   }>({
     method: "POST",
-    url: "/trainers",
+    url: "https://backendpokemon-production.up.railway.app/trainers",
     schema: {
       body: {
         type: "object",
@@ -50,7 +50,7 @@ export const registerTrainerRoutes = (
     Body: { id: number; name: string; gender: string };
   }>({
     method: "PUT",
-    url: "/trainers/:id",
+    url: "https://backendpokemon-production.up.railway.app/trainers/:id",
     schema: {
       params: {
         type: "object",
@@ -83,7 +83,7 @@ export const registerTrainerRoutes = (
   });
   server.route({
     method: "DELETE",
-    url: "/trainers/:id",
+    url: "https://backendpokemon-production.up.railway.app/trainers/:id",
 
     handler: async (request: FastifyRequest, reply) => {
       const r = request.params as { id: string };
